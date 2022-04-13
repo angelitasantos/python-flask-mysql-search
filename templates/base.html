@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename = 'img/logo.png') }}" type="image/x-icon">
+    <title>{{ title }}</title>
+
+    <meta name="description" content="description">
+    <meta name="keywords" content="keywords">
+    <meta name="author" content="author">
+    <meta name="classification" content="classification">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/root.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">
+    <script src="https://kit.fontawesome.com/bfe7a3e22e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    {% include '/layout/header.html' %}
+
+    <main>
+
+        <div class="container">
+
+            {% block container %}
+            {% endblock %}
+
+        </div>
+
+    </main>
+
+    {% include '/layout/footer.html' %}
+
+    <script src="{{ url_for('static', filename = 'js/script.js') }}"></script>
+
+</body>
+
+</html>

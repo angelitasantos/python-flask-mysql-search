@@ -1,0 +1,46 @@
+{% extends '/admin/base.html' %}
+
+{% block container %}
+<p>User : {{ session["aname"] }}</p>
+
+<section class="section-users">
+    <div class="">
+        <h3 class=""><i class="fa fa-users"> View Users</i></h3>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category,message in messages %}
+        <div class="alert alert-{{category}}" role="alert">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="">S.No</th>
+                    <th class="">Name</th>
+                    <th class="">Age</th>
+                    <th class="">Address</th>
+                    <th class="">Contact</th>
+                    <th class="">Mail</th>
+                    <th class="">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in res %}
+                <tr>
+                    <td class="">{{loop.index}}</td>
+                    <td>{{data.name}}</td>
+                    <td class="">{{data.age}}</td>
+                    <td>{{data.address}}</td>
+                    <td class="">{{data.contact}}</td>
+                    <td>{{data.mail}}</td>
+                    <td class=""><a href="{{url_for('delete_users',id=data['pid'])}}" class=""
+                            onclick="return confirm('Are you sure to delete?')">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

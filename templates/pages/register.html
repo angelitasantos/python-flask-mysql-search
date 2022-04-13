@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<section class="section-login">
+    <div class="content content-register">
+        <div id="register">
+            <form method="post" action="">
+                <h1><i class="fa fa-user"> {{ title }}</i></h1>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{category}}" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <div>
+                    <label for="nome_cad">Nome</label>
+                    <input id="nome_cad" name="uname" required="required" type="text" placeholder="Nome" />
+                </div>
+                <div>
+                    <label for="senha_cad">Senha</label>
+                    <input id="senha_cad" name="upass" required="required" type="password" placeholder="Senha" />
+                </div>
+                <div>
+                    <label for="age_cad">Age</label>
+                    <input id="age_cad" name="age" type="text" placeholder="Age" />
+                </div>
+                <div>
+                    <label for="address_cad">Address</label>
+                    <input id="address_cad" name="address" type="text" placeholder="Address" />
+                </div>
+                <div>
+                    <label for="contact_cad">Contact</label>
+                    <input id="contact_cad" name="contact" type="text" placeholder="Contact" />
+                </div>
+                <div>
+                    <label for="email_cad">E-mail</label>
+                    <input id="email_cad" name="mail" required="required" type="email" placeholder="E-mail" />
+                </div>
+                <div>
+                    <input type="submit" name="register" value="Register" />
+                </div>
+
+                <div class="">
+                    Já tem conta?
+                    <a href="{{url_for('login')}}">Login </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

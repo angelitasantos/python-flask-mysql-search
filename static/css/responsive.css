@@ -1,0 +1,75 @@
+@import url(./root.css);
+
+
+@media (max-width: 1024px) {
+
+    header {
+        padding: 12px 20px;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation.active {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 70px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background: rgba(1, 1, 1, 0.5);
+    }
+
+    header .navigation .navigation-items a {
+        width: 100%;
+        height: 50px;
+        color: var(--bg-gray);
+        margin: 0px;
+        padding-top: 15px;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    header .navigation .navigation-items a:before {
+        transition: 0s ease;
+    }
+
+    header .navigation .navigation-items a:hover {
+        background: var(--green);
+        color: var(--light);
+    }
+
+    header .navigation.active .navigation-items {
+        background: var(--light);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+    }
+
+    .menu-btn {
+        background: url('/static/img/ic-menu.png') no-repeat;
+        background-size: 30px;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .menu-btn.active {
+        z-index: 999;
+        background: url('/static/img/ic-close.png') no-repeat;
+        background-size: 25px;
+        background-position: center;
+        transition: 0.3s ease;
+    }
+
+    section article div div.w50 {
+        width: 100%;
+    }
+}

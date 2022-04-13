@@ -1,0 +1,324 @@
+@import url(./root.css);
+
+
+/* ########################################################### */
+
+header {
+    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+
+header .brand {
+    color: var(--light);
+    font-size: 1.5em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navigation {
+    position: relative;
+}
+
+header .navigation .navigation-items a {
+    position: relative;
+    margin-left: 30px;
+    color: var(--light);
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:before {
+    content: '';
+    position: absolute;
+    background: var(--light);
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navigation .navigation-items a:hover:before {
+    width: 100%;
+}
+
+
+/* ########################################################### */
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 0%);
+    height: 30px;
+    background: var(--footer);
+    display: flex;
+}
+
+.redes-socials-icons a {
+    font-size: 1.5em;
+    color: rgba(255, 255, 255, 0.7);
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.redes-socials-icons a:hover {
+    color: var(--light);
+}
+
+#copyright {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2%;
+}
+
+
+/* ########################################################### */
+
+.home {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 15px;
+}
+
+.home img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home.center {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+section.banner-container {
+    margin: 0;
+    margin-top: 70px;
+    width: 0 auto;
+    height: 500px;
+    position: relative;
+}
+
+.banner-single {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+section.banner-container div h5 {
+    z-index: 2;
+    width: 93%;
+    max-width: 400px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+section.banner-container div h5 {
+    color: var(--header);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.slide1 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 100%), url(/static/img/slide1.webp);
+}
+
+.slide2 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 100%), url(/static/img/slide2.webp);
+}
+
+.slide3 {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 100%), url(/static/img/slide3.webp);
+}
+
+
+/* ########################################################### */
+
+.about {
+    margin-top: 40px;
+    padding: 30px;
+}
+
+section h6.txtAbout {
+    padding-top: 10px;
+}
+
+section article {
+    text-align: center;
+}
+
+section article img {
+    width: 140px;
+    height: 140px;
+}
+
+section article div div h6 {
+    padding-top: 25px;
+}
+
+.txtAbout,
+.txtPhoto1,
+.txtPhoto2 {
+    line-height: 30px;
+    text-align: center;
+    padding: 30px 0;
+    color: var(--bg-gray);
+}
+
+
+/* ########################################################### */
+
+.contact {
+    margin: 70px 0;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact div h2 {
+    margin-top: 70px;
+    padding-bottom: 40px;
+}
+
+.contact div p {
+    padding-bottom: 15px;
+}
+
+
+/* ########################################################### */
+
+.section-login {
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 500px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.content-login {
+    min-height: 450px;
+}
+
+.content-register {
+    min-height: 710px;
+}
+
+h1 {
+    font-size: 48px;
+    color: var(--header);
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+h1:after {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 10px;
+    background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+    background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    color: var(--header);
+    position: relative;
+}
+
+input {
+    outline: none;
+    font-size: 1.0em;
+}
+
+input:not([type="checkbox"]) {
+    width: 100%;
+    margin-top: 4px;
+    padding: 10px;
+    border: 1px solid var(--header);
+    border-radius: 3px;
+    box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.6) inset;
+    transition: all 0.2s linear;
+}
+
+input[type="submit"] {
+    width: 100% !important;
+    cursor: pointer;
+    background: var(--header);
+    padding: 8px 5px;
+    color: var(--bg-light);
+    font-size: 20px;
+    border: 1px solid var(--bg-light);
+    margin-bottom: 10px;
+    text-shadow: 0 1px 1px var(--bg-gray);
+    border-radius: 5px;
+    transition: all 0.2s linear;
+}
+
+input[type="submit"]:hover {
+    background: var(--footer);
+}
+
+#register,
+#login {
+    top: 0px;
+    width: 100%;
+    padding: 18px 6% 10px 6%;
+    margin: 0 0 30px 0;
+    background: #f7f7f7;
+    border: 1px solid rgba(147, 184, 189, 0.8);
+    border-radius: 5px;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+
+
+/* ########################################################### */
+
+.section-manager {
+    min-height: 500px;
+    padding: 70px 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ########################################################### */
+
+.section-users {
+    margin: 0 20px;
+    padding: 70px 0;
+}

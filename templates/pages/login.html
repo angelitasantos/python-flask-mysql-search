@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<section class="section-login">
+    <div class="content content-login">
+        <div id="login">
+            <form method="post" action="">
+                <h1><i class="fa fa-user"> {{ title }}</i></h1>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{category}}" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <div>
+                    <label for="nome_login">Seu e-mail</label>
+                    <input id="nome_login" name="uname" required="required" type="text" placeholder="E-mail" />
+                </div>
+
+                <div>
+                    <label for="email_login">Sua senha</label>
+                    <input id="email_login" name="upass" required="required" type="password" placeholder="Senha" />
+                </div>
+
+                <div>
+                    <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+                    <label for="manterlogado">Manter-me logado</label>
+                </div>
+
+                <div>
+                    <input type="submit" name="ulogin" value="Login" />
+                </div>
+
+                <div class="">
+                    Esqueceu sua senha?
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                </div>
+                <div class="">
+                    Ainda não tem conta?
+                    <a href="{{ url_for('register') }}">Register</a>
+                </div>
+                <div class="">
+                    É administrador?
+                    <a href="{{ url_for('admin') }}">Admin</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

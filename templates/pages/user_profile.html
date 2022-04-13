@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block container %}
+
+<section class="section-login">
+    <div class="content content-login">
+        <div id="login">
+            <h1 class=""><i class="fa fa-user-lock"> {{ title }}</i></h1>
+            <form method="post" action="/update_user">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{category}}" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                <div class="">
+                    <label>User Name</label>
+                    <input type="text" name="name" value="{{res.name}}" class="form-control">
+                </div>
+                <div class="">
+                    <label>Password</label>
+                    <input type="password" name="password" disabled value="{{res.password}}" class="">
+                </div>
+                <div class="">
+                    <label>Age</label>
+                    <input type="text" name="age" value="{{res.age}}" class="">
+                </div>
+                <div class="">
+                    <label>Address</label>
+                    <input type="text" name="address" value="{{res.address}}" class="">
+                </div>
+                <div class="">
+                    <label>Contact</label>
+                    <input type="text" name="contact" value="{{res.contact}}" class="">
+                </div>
+                <div class="">
+                    <label>Mail</label>
+                    <input type="text" name="mail" value="{{res.mail}}" class="">
+                </div>
+                <div class="">
+                    <input type="submit" class="" value="Update Profile">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

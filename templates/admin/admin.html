@@ -1,0 +1,44 @@
+{% extends '/admin/base.html' %}
+
+{% block container %}
+
+<section class="section-login">
+    <div class="content content-login">
+        <div id="login">
+            <form method="post" action="">
+                <h1><i class="fa fa-user"> {{ title }}</i></h1>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{category}}" role="alert">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <div>
+                    <label for="nome_login">Username</label>
+                    <input id="nome_login" name="aname" required="required" type="email" placeholder="Username" />
+                </div>
+
+                <div>
+                    <label for="email_login">Password</label>
+                    <input id="email_login" name="apass" required="required" type="password" placeholder="Password" />
+                </div>
+
+                <div>
+                    <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
+                    <label for="manterlogado">Manter-me logado</label>
+                </div>
+
+                <div>
+                    <input type="submit" name="alogin" value="Login" />
+                </div>
+                <div class="">
+                    Não é Administrador?
+                    <a href="{{url_for('login')}}">User</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
